@@ -1,0 +1,19 @@
+{
+  "name": "cs325-campus-mapper",
+  "version": "1.0.0",
+  "description": "This is a repository containing the Campus Mapper project code for COMPSCI 325.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvked/cs325-campus-mapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvked/cs325-campus-mapper/issues"
+  },
+  "homepage": "https://github.com/dhruvked/cs325-campus-mapper#readme"
+}

@@ -1,3 +1,5 @@
+
+
 function first_page(){
     let login = document.createElement("div");
     let login_head = document.createElement("h2");
@@ -37,6 +39,7 @@ function first_page(){
     login.appendChild(alternate_login_btn)
 
 
+    
     //temp
     document.body.appendChild(login);
 }
@@ -80,3 +83,25 @@ function second_page(){
 
 first_page()
 second_page()
+
+
+const mapElement = $(".map .svg")[0];
+const panzoom = Panzoom(mapElement, { contain: 'outside', startScale: 1.5 });
+
+mapElement.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+mapElement.parentElement.addEventListener('wheel', function (event) {
+  if (!event.shiftKey) return;
+  panzoom.zoomWithWheel(event);
+})
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+window.initMap = initMap;
+index.js
