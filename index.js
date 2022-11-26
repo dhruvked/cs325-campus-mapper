@@ -120,15 +120,41 @@ function second_page(){
     add_option("dining hall");
     add_option("car parks");
 
-    
-    
-
-
     select_filters.appendChild(dataset)
 
     page2.appendChild(filter_head);
     page2.appendChild(select_filters)
     document.body.appendChild(page2);
+
+    
+    let calendar = document.createElement("div");
+    let calendar_head = document.createElement("h2");
+    calendar_head.textContent="Select Date"
+
+    calendar.appendChild(calendar_head)
+
+    let calendar_selector = document.createElement("input");
+    calendar_selector.type = "date"
+    
+    calendar.appendChild(calendar_selector)
+
+    document.body.appendChild(calendar);
+
+    let date = new Date();
+
+    let time = document.createElement("div");
+    let time_head = document.createElement("h2");
+    time_head.textContent="Select Time"
+
+    time.appendChild(time_head)
+
+    let time_selector = document.createElement("input");
+
+    time_selector.type = "time"
+
+    time.appendChild(time_selector)
+
+    document.body.appendChild(time);
 }
 
 first_page()
