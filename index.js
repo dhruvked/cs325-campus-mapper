@@ -1,4 +1,50 @@
-
+data = {
+  "library" : {
+          "8":"10",
+          "9":"12",
+          "10":"25",
+          "11":"20",
+          "12":"30",
+          "13":"40",
+          "14":"40",
+          "15":"50",
+          "16":"30",
+          "17":"20",
+          "18":"20",
+          "19":"15",
+          "20":"10"
+  },
+  "wooster" : {
+      "8":"10",
+      "9":"10",
+      "10":"10",
+      "11":"10",
+      "12":"10",
+      "13":"10",
+      "14":"10",
+      "15":"10",
+      "16":"10",
+      "17":"10",
+      "18":"10",
+      "19":"10",
+      "20":"10"
+  },
+  "rec" : {
+      "8":"20",
+      "9":"20",
+      "10":"20",
+      "11":"15",
+      "12":"15",
+      "13":"30",
+      "14":"50",
+      "15":"60",
+      "16":"40",
+      "17":"25",
+      "18":"21",
+      "19":"20",
+      "20":"10"
+  }
+}
 
 function first_page(){
     let login = document.createElement("div");
@@ -51,7 +97,11 @@ function second_page(){
     let filter_head = document.createElement("h2");
     filter_head.textContent="Filter"
 
+    back = document.createElement("button")
+    back.style.position = "absolute"
 
+    back.innerHTML = "back"
+    page2.appendChild(back)
     let select_filters = document.createElement("input");
     select_filters.setAttribute("list", "filters")
     let dataset = document.createElement("datalist");
@@ -84,24 +134,50 @@ function second_page(){
 first_page()
 second_page()
 
+function third_page(){
+  let container = document.createElement("div")
+  let map = document.createElement("img")
+  map.src = "Screenshot 2022-11-26 at 11.46.28 AM.png"
+  container.style.height = "600px"
+  container.style.width = "600px"
+  container.style.overflow = "scroll"
+  
+  back = document.createElement("button")
+    back.style.position = "absolute"
+    container.appendChild(back)
+    back.innerHTML = "back"
 
-const mapElement = $(".map .svg")[0];
-const panzoom = Panzoom(mapElement, { contain: 'outside', startScale: 1.5 });
+  library = document.createElement("button")
+  library.style.position = "absolute"
+  library.style.top = "500px"
+  library.style.left = "390px"
+  container.appendChild(library)
+  container.appendChild(map)
 
-mapElement.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-mapElement.parentElement.addEventListener('wheel', function (event) {
-  if (!event.shiftKey) return;
-  panzoom.zoomWithWheel(event);
-})
+  wooster = document.createElement("button")
+  wooster.style.position = "absolute"
+  wooster.style.top = "190px"
+  wooster.style.left = "570px"
+  container.appendChild(wooster)
+  container.appendChild(map)
 
-let map;
+  wooster = document.createElement("button")
+  wooster.style.position = "absolute"
+  wooster.style.top = "190px"
+  wooster.style.left = "570px"
+  container.appendChild(wooster)
+  container.appendChild(map)
+  
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
+  rec = document.createElement("button")
+  rec.style.position = "absolute"
+  rec.style.top = "595px"
+  rec.style.left = "131.5px"
+  container.appendChild(rec)
+  container.appendChild(map)
+  
+  container.style.position="absolute"
+  document.body.appendChild(container);
 }
 
-window.initMap = initMap;
-index.js
+third_page()
