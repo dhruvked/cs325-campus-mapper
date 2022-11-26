@@ -46,164 +46,24 @@ data = {
   }
 }
 
-function first_page(){
-    let login = document.createElement("div");
-    let login_head = document.createElement("h2");
-    login_head.textContent="LOGIN"
+function availability(population){
+  if(population<20){return "green"}
+  else if(population>19 && population<31){return "yellow"}
+  return "red"
+}
 
-    let username = document.createElement("input");
-    username.type = "text"
-    username.placeholder = "username"
+function firstPageCont(){
+  window.location.href = "second_page.html"
+}
 
-    let password = document.createElement("input");
-    password.type = "text"
-    password.placeholder = "password"
-
-    let login_btn = document.createElement("button");
-    login_btn.innerHTML="enter"
-
-    let alternate_login = document.createElement("h2");
-    alternate_login.textContent="Not a Student?"
-
-    let terms = document.createElement("a")
-    terms.innerHTML = "terms"
-    terms.href = "/"
-
-    let check = document.createElement("input");
-    check.setAttribute("type", "checkbox")
-    
-    let alternate_login_btn = document.createElement("button");
-    alternate_login_btn.innerHTML="Login as guest"
-
-    login.appendChild(login_head)
-    login.appendChild(username)
-    login.appendChild(password)
-    login.appendChild(login_btn)
-    login.appendChild(alternate_login)
-    login.appendChild(terms)
-    login.appendChild(check)
-    login.appendChild(alternate_login_btn)
-
-
-    
-    //temp
-    document.body.appendChild(login);
+function secondPageCont(){
+    thirdPageCont(document.getElementById('time').value)
 }
 
 
-function second_page(){
-
-    let page2 = document.createElement("div");
-    let filter_head = document.createElement("h2");
-    filter_head.textContent="Filter"
-
-    back = document.createElement("button")
-    back.style.position = "absolute"
-
-    back.innerHTML = "back"
-    page2.appendChild(back)
-    let select_filters = document.createElement("input");
-    select_filters.setAttribute("list", "filters")
-    let dataset = document.createElement("datalist");
-    dataset.id = "filters"
-
-    let add_option = (str) => {
-        let options = document.createElement("option");
-        options.value = str
-        dataset.appendChild(options)
-    }
-
-    add_option("library");
-    add_option("cafe");
-    add_option("basketball courts");
-    add_option("gym");
-    add_option("dining hall");
-    add_option("car parks");
-
-    select_filters.appendChild(dataset)
-
-    page2.appendChild(filter_head);
-    page2.appendChild(select_filters)
-    document.body.appendChild(page2);
-
-    
-    let calendar = document.createElement("div");
-    let calendar_head = document.createElement("h2");
-    calendar_head.textContent="Select Date"
-
-    calendar.appendChild(calendar_head)
-
-    let calendar_selector = document.createElement("input");
-    calendar_selector.type = "date"
-    
-    calendar.appendChild(calendar_selector)
-
-    document.body.appendChild(calendar);
-
-    let date = new Date();
-
-    let time = document.createElement("div");
-    let time_head = document.createElement("h2");
-    time_head.textContent="Select Time"
-
-    time.appendChild(time_head)
-
-    let time_selector = document.createElement("input");
-
-    time_selector.type = "time"
-
-    time.appendChild(time_selector)
-
-    document.body.appendChild(time);
+function thirdPageCont(time){
+  window.location.href = "third_page.html"
+  library=document.getElementById('library')
+  time = time.substring(0,2)
+  console.log(time)
 }
-
-first_page()
-second_page()
-
-function third_page(){
-  let container = document.createElement("div")
-  let map = document.createElement("img")
-  map.src = "Screenshot 2022-11-26 at 11.46.28 AM.png"
-  container.style.height = "600px"
-  container.style.width = "600px"
-  container.style.overflow = "scroll"
-  
-  back = document.createElement("button")
-    back.style.position = "absolute"
-    container.appendChild(back)
-    back.innerHTML = "back"
-
-  library = document.createElement("button")
-  library.style.position = "absolute"
-  library.style.top = "500px"
-  library.style.left = "390px"
-  container.appendChild(library)
-  container.appendChild(map)
-
-  wooster = document.createElement("button")
-  wooster.style.position = "absolute"
-  wooster.style.top = "190px"
-  wooster.style.left = "570px"
-  container.appendChild(wooster)
-  container.appendChild(map)
-
-  wooster = document.createElement("button")
-  wooster.style.position = "absolute"
-  wooster.style.top = "190px"
-  wooster.style.left = "570px"
-  container.appendChild(wooster)
-  container.appendChild(map)
-  
-
-  rec = document.createElement("button")
-  rec.style.position = "absolute"
-  rec.style.top = "595px"
-  rec.style.left = "131.5px"
-  container.appendChild(rec)
-  container.appendChild(map)
-  
-  container.style.position="absolute"
-  document.body.appendChild(container);
-}
-
-third_page()

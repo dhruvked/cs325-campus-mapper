@@ -1,5 +1,29 @@
 
-  .map{
-    height: 40 px;
-    width: 40px;
+
+#container{
+    height: 500px;
+    width: 500px;
+    overflow: scroll;
   }
+
+#library{
+  position: absolute;
+  top: 500px;
+  left: 390px;
+}
+
+#wooster{
+  position: absolute;
+  top: 190px;
+  left: 570px;
+}
+
+#rec{
+  position: absolute;
+  top: 595px;
+  left: 131.5px;
+}
+
+#back{
+  position: absolute;
+}

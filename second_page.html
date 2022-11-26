@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <div id="container">
+        <h2>Filter</h2>
+        <input id="filter" type="text" list="filters" placeholder="select place">
+            <datalist id="filters">
+                <option value="Library"></option>
+                <option value="Dining"></option>
+                <option value="Gym"></option>
+            </datalist>
+            <h2>Select date</h2>
+            <input type="date" id="date">
+            <h2>Select Time</h2>
+            <input type="time" id="time">
+            <input type="button" value="continue" onclick="secondPageCont()">
+    </div>
+
+</body>
+</html>
